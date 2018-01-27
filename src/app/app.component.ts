@@ -10,14 +10,17 @@ import { Repo } from './interfaces/repo';
 export class AppComponent {
   repoCount: number;
   repos: Repo[];
+  resultsLoaded: boolean = false;
 
   constructor(public queryService: QueryService) {}
 
   search(query) {
     this.queryService.search(query)
       .subscribe(res => {
-        this.repoCount = res["count"];
+        console.log(res);
+        this.repoCount = res["total_count"];
         this.repos = res["items"];
+        this.resultsLoaded = true;
       });
   }
 }
