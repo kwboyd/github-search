@@ -11,7 +11,6 @@ export class QueryService {
   search(query: string) {
     let githubUrl = `https://api.github.com/search/repositories?q=${query}`;
     return this.http.get(githubUrl)
-      .subscribe(res => console.log(res));
   }
 
 }

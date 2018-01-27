@@ -37,7 +37,8 @@
   img {
     width: 70%;
   }
-  &:focus {
+  &:focus, &:hover {
     outline: none;
+    background-color: $dark-blue;
   }
 }

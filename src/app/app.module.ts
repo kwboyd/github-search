@@ -5,7 +5,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
-import { QueryService } from './services/query.service';
+import { QueryService } from './services/query/query.service';
+import { RepocolorService } from './services/repocolor/repocolor.service';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { QueryService } from './services/query.service';
     FormsModule
   ],
   providers: [
-    QueryService
+    QueryService,
+    RepocolorService
   ],
   bootstrap: [AppComponent]
 })
