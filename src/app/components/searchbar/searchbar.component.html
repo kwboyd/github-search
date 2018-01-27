@@ -1,0 +1,6 @@
+<div>
+  <input type="search" (keyup.enter)="enterSearch()" placeholder="Search repositories..." id="search-input" [(ngModel)]="query">
+  <button id="search-button" (click)="enterSearch()">
+    <img alt="Search" src="./assets/icons/glass.svg">
+  </button>
+</div>

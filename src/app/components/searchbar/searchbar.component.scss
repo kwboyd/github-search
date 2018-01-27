@@ -1,0 +1,43 @@
+@import "~variables.scss";
+
+#search-input {
+  width: calc(100% - 50px);
+  height: 50px;
+  padding-left: 9px;
+  font-size: 1.1em;
+  background-color: #fff;
+  border-radius: 6px 0px 0px 6px;
+  border-width: 1px 0px 1px 1px;
+  border-color: $medium-gray;
+  border-style: solid;
+  -webkit-box-shadow:0 0 9px #dbdbdb inset;
+  -moz-box-shadow:0 0 9px #dbdbdb inset;
+  box-shadow:0 0 9px #dbdbdb inset;
+  &::placeholder {
+    color: $light-gray;
+  }
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
+}
+
+#search-input:focus, #search-input:focus + #search-button {
+  outline: 0;
+  border-color: $blue;
+}
+
+#search-button {
+  float: right;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 0px 6px 6px 0px;
+  border: 1px solid $medium-gray;
+  background-color: $blue;
+  img {
+    width: 70%;
+  }
+  &:focus {
+    outline: none;
+  }
+}
