@@ -3,6 +3,7 @@
     <h1><span id="github-logo"><img alt="GitHub Search" src="./assets/icons/github_mark.svg"></span> GitHub Search</h1>
   </div>
 
-  <searchbar></searchbar>
+  <searchbar (search)="search($event)"></searchbar>
 
+  <p *ngFor="let repo of repos">{{ repo.full_name }}</p>
 </div>

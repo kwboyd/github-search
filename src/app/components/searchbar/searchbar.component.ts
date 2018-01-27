@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { QueryService } from '../../services/query/query.service';
 
 @Component({
@@ -6,22 +6,20 @@ import { QueryService } from '../../services/query/query.service';
   templateUrl: './searchbar.component.html',
   styleUrls: ['./searchbar.component.scss']
 })
-export class SearchbarComponent implements OnInit {
+export class SearchbarComponent {
   query: string;
   items: any;
+
+  @Output()
+  enter: EventEmitter<string> = new EventEmitter<string>();
 
   constructor(
     public queryService: QueryService
   ) { }
 
-  ngOnInit() {
-  }
-
   enterSearch() {
-    this.queryService.search(this.query)
-      .subscribe(res => {
-        console.log(res);
-      });
+    console.log('enter search');
+    this.enter.emit(this.query);
   }
 
 }
