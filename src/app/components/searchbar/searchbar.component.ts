@@ -18,7 +18,6 @@ export class SearchbarComponent {
   ) { }
 
   enterSearch() {
-    console.log('enter search');
     this.enter.emit(this.query);
   }
 
