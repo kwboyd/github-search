@@ -2,11 +2,11 @@ import { Component, Input } from '@angular/core';
 import { Repo } from '../../interfaces/repo';
 
 @Component({
-  selector: 'repoblock',
-  templateUrl: './repoblock.component.html',
-  styleUrls: ['./repoblock.component.scss']
+  selector: 'repo-block',
+  templateUrl: './repo-block.component.html',
+  styleUrls: ['./repo-block.component.scss']
 })
-export class RepoblockComponent {
+export class RepoBlockComponent {
   @Input() repo: Repo;
 
   constructor() { }

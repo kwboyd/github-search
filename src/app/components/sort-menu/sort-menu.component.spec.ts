@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RepoblockComponent } from './repoblock.component';
+import { SortMenuComponent } from './sort-menu.component';
 
-describe('RepoblockComponent', () => {
-  let component: RepoblockComponent;
-  let fixture: ComponentFixture<RepoblockComponent>;
+describe('SortMenuComponent', () => {
+  let component: SortMenuComponent;
+  let fixture: ComponentFixture<SortMenuComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RepoblockComponent ]
+      declarations: [ SortMenuComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RepoblockComponent);
+    fixture = TestBed.createComponent(SortMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

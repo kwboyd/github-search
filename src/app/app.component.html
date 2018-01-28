@@ -3,17 +3,17 @@
     <h1><span id="github-logo"><img alt="GitHub Search" src="./assets/icons/github_mark.svg"></span> GitHub Search</h1>
   </div>
 
-  <searchbar (enter)="setQuery($event)" [loading]="loading"></searchbar>
+  <search-bar (enter)="setQuery($event)" [loading]="loading"></search-bar>
 
   <div class="flex-row-between" *ngIf="resultsLoaded" >
     <p class="large-text">
-      <span class="bold">{{ repoCount }}</span> {{ repoCount === 1 ? 'result' : 'results' }} found. 
-      <span *ngIf="repos.length < repoCount">Showing top {{ repos.length }}.</span>
+      <span class="bold">{{ repoCount | toLocale }}</span> {{ repoCount === 1 ? 'result' : 'results' }} found. 
+      <span *ngIf="repos.length < repoCount">Showing top {{ repos.length | toLocale }}.</span>
       <!-- total search result count often greater than the actual number of repos returned. -->
       <!--  if so, tell the user how many are being shown -->
     </p>
-    <sortmenu [sortBy]="sortBy" (switch)="setSortBy($event)"></sortmenu>
+    <sort-menu [sortBy]="sortBy" (switch)="setSortBy($event)"></sort-menu>
   </div>
 
-  <repoblock *ngFor="let repo of repos" [repo]="repo"></repoblock>
+  <repo-block *ngFor="let repo of repos" [repo]="repo"></repo-block>
 </div>

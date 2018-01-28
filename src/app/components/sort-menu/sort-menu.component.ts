@@ -1,11 +1,11 @@
 import { Component, Input, HostListener, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'sortmenu',
-  templateUrl: './sortmenu.component.html',
-  styleUrls: ['./sortmenu.component.scss']
+  selector: 'sort-menu',
+  templateUrl: './sort-menu.component.html',
+  styleUrls: ['./sort-menu.component.scss']
 })
-export class SortmenuComponent {
+export class SortMenuComponent {
   showSortBox: boolean = false;
   clickedWithin: boolean = false;
 

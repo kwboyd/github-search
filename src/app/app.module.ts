@@ -4,20 +4,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { SearchbarComponent } from './components/searchbar/searchbar.component';
-import { SortmenuComponent } from './components/sortmenu/sortmenu.component';
-import { RepoblockComponent } from './components/repoblock/repoblock.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { SortMenuComponent } from './components/sort-menu/sort-menu.component';
+import { RepoBlockComponent } from './components/repo-block/repo-block.component';
 
 import { QueryService } from './services/query/query.service';
-import { RepocolorService } from './services/repocolor/repocolor.service';
+import { RepoColorService } from './services/repo-color/repo-color.service';
+import { ToLocalePipe } from './pipes/to-locale/to-locale.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchbarComponent,
-    SortmenuComponent,
-    RepoblockComponent
+    SearchBarComponent,
+    SortMenuComponent,
+    RepoBlockComponent,
+    ToLocalePipe
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,7 @@ import { RepocolorService } from './services/repocolor/repocolor.service';
   ],
   providers: [
     QueryService,
-    RepocolorService
+    RepoColorService
   ],
   bootstrap: [AppComponent]
 })

@@ -12,7 +12,7 @@
         <p>{{ repo.description }}</p>
       </div>
       <div class="star-box">
-        {{ repo.stargazers_count }}
+        {{ repo.stargazers_count | toLocale }}
         <img src="./assets/icons/star.svg" alt="Stars">
       </div>
     </div>

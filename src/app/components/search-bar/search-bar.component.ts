@@ -2,11 +2,11 @@ import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { QueryService } from '../../services/query/query.service';
 
 @Component({
-  selector: 'searchbar',
-  templateUrl: './searchbar.component.html',
-  styleUrls: ['./searchbar.component.scss']
+  selector: 'search-bar',
+  templateUrl: './search-bar.component.html',
+  styleUrls: ['./search-bar.component.scss']
 })
-export class SearchbarComponent {
+export class SearchBarComponent {
   query: string;
 
   @Input() loading: boolean;
