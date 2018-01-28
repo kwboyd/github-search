@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class RepocolorService {
 
-  getColor(language) {
+  getColor(language: string): string | null {
     // get the color associated with a language, if color available
     if (this.colors[language] && this.colors[language].color) {
       return this.colors[language].color;

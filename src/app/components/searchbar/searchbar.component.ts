@@ -8,10 +8,8 @@ import { QueryService } from '../../services/query/query.service';
 })
 export class SearchbarComponent {
   query: string;
-  items: any;
 
-  @Output()
-  enter: EventEmitter<string> = new EventEmitter<string>();
+  @Output() enter: EventEmitter<string> = new EventEmitter<string>();
 
   constructor(
     public queryService: QueryService

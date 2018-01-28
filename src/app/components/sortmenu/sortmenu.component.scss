@@ -22,11 +22,11 @@
   background-color: white;
   padding: 9px 6px;
   border: 1px solid $light-gray;
-  width: 70%;
   box-shadow: 1px 1px 5px $light-gray;
-  float: right;
-  margin-right: 10%;
+  position: absolute;
+  right: -10px;
   margin-top: -10px;
+  width: 6em;
   p {
     margin: 0;
     padding-left: 9px;

@@ -11,12 +11,27 @@ export class AppComponent {
   repoCount: number;
   repos: Repo[];
   resultsLoaded: boolean = false;
-  sortBy: string = 'relevance';
+  sortBy: string = 'score';
+  query: string;
 
   constructor(public queryService: QueryService) {}
 
-  search(query) {
-    this.queryService.search(query, this.sortBy)
+  setQuery(query: string) {
+    // store the query and then search
+    // query stored so that if sortBy switches, the query doesn't change
+    this.query = query;
+    this.search();
+  }
+
+  setSortBy(sortType: string) {
+    // store the sort and then search
+    // query stored so that if sortBy switches, the query doesn't change
+    this.sortBy = sortType;
+    this.search();
+  }
+
+  search() {
+    this.queryService.search(this.query, this.sortBy)
       .subscribe(res => {
         console.log(res);
         this.repoCount = res["total_count"];

@@ -1,6 +1,9 @@
-<p class="sort-label" (click)="toggleSortBox()">Sort: <span class="sort-value">{{ sortBy }}</span></p>
+<div class="relative">
+  <p class="sort-label" (click)="toggleSortBox()">Sort: <span class="sort-value">{{ sortBy === 'score' ? 'Relevance' : sortBy }}</span></p>
+  <!-- relevance is called score for api purposes -->
 
-<div *ngIf="showSortBox" class="sort-box">
-  <p [class.selected]="sortBy === 'relevance'">Relevance</p>
-  <p [class.selected]="sortBy === 'stars'">Stars</p>
+  <div *ngIf="showSortBox" class="sort-box">
+    <p [class.selected]="sortBy === 'score'" (click)="switchSort('score')">Relevance</p>
+    <p [class.selected]="sortBy === 'stars'" (click)="switchSort('stars')">Stars</p>
+  </div>
 </div>

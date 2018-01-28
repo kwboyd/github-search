@@ -3,7 +3,7 @@
     <h1><span id="github-logo"><img alt="GitHub Search" src="./assets/icons/github_mark.svg"></span> GitHub Search</h1>
   </div>
 
-  <searchbar (enter)="search($event)"></searchbar>
+  <searchbar (enter)="setQuery($event)"></searchbar>
 
   <div class="flex-row-between" *ngIf="resultsLoaded" >
     <p class="large-text">
@@ -12,7 +12,7 @@
       <!-- total search result count often greater than the actual number of repos returned. -->
       <!--  if so, tell the user how many are being shown -->
     </p>
-    <sortmenu [sortBy]="sortBy"></sortmenu>
+    <sortmenu [sortBy]="sortBy" (switch)="setSortBy($event)"></sortmenu>
   </div>
 
 
