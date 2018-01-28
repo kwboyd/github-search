@@ -18,6 +18,8 @@ export class SearchbarComponent {
   ) { }
 
   enterSearch() {
+    // triggered by pressing the search button or pressing enter
+    // emits event containing the query
     this.enter.emit(this.query);
   }
 

@@ -1,0 +1,47 @@
+@import '~variables.scss';
+
+.sort-label {
+  font-size: 1.05em;
+  cursor: pointer;
+}
+
+.sort-value {
+  text-transform: capitalize;
+  font-weight: 700;
+  position: relative;
+  &:after {
+    content: url('/assets/icons/triangle_down.svg');
+    position: absolute;
+    margin-left: 4px;
+    top: -1px;
+    width: 13px;
+  }
+}
+
+.sort-box {
+  background-color: white;
+  padding: 9px 6px;
+  border: 1px solid $light-gray;
+  width: 70%;
+  box-shadow: 1px 1px 5px $light-gray;
+  float: right;
+  margin-right: 10%;
+  margin-top: -10px;
+  p {
+    margin: 0;
+    padding-left: 9px;
+    cursor: pointer;
+    line-height: 1.5;
+    color: $medium-gray;
+    font-size: .95em;
+    display: inline-block;
+    position: relative;
+    &.selected:before {
+      content: url('/assets/icons/arrow_right.svg');
+      position: absolute;
+      left: 0;
+      width: 7px;
+      top: -1px;
+    }
+  }
+}

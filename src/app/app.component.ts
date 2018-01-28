@@ -11,11 +11,12 @@ export class AppComponent {
   repoCount: number;
   repos: Repo[];
   resultsLoaded: boolean = false;
+  sortBy: string = 'relevance';
 
   constructor(public queryService: QueryService) {}
 
   search(query) {
-    this.queryService.search(query)
+    this.queryService.search(query, this.sortBy)
       .subscribe(res => {
         console.log(res);
         this.repoCount = res["total_count"];

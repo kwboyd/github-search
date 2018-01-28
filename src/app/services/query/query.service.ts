@@ -8,8 +8,9 @@ export class QueryService {
 
   constructor(private http: HttpClient) { }
 
-  search(query: string) {
-    let githubUrl = `https://api.github.com/search/repositories?q=${query}`;
+  search(query: string, sortBy: string) {
+    // get the search results from github
+    let githubUrl = `https://api.github.com/search/repositories?q=${query}&sort=${sortBy}`;
     return this.http.get(githubUrl)
   }
 

@@ -5,6 +5,17 @@
 
   <searchbar (enter)="search($event)"></searchbar>
 
-  <p *ngIf="resultsLoaded" class="large-text"><span class="bold">{{ repoCount }}</span> {{ repoCount === 1 ? 'result' : 'results' }} found. <span *ngIf="repos.length < repoCount">Showing top {{ repos.length }}.</span></p>
+  <div class="flex-row-between" *ngIf="resultsLoaded" >
+    <p class="large-text">
+      <span class="bold">{{ repoCount }}</span> {{ repoCount === 1 ? 'result' : 'results' }} found. 
+      <span *ngIf="repos.length < repoCount">Showing top {{ repos.length }}.</span>
+      <!-- total search result count often greater than the actual number of repos returned. -->
+      <!--  if so, tell the user how many are being shown -->
+    </p>
+    <sortmenu [sortBy]="sortBy"></sortmenu>
+  </div>
+
+
+
   <p *ngFor="let repo of repos">{{ repo.full_name }}</p>
 </div>

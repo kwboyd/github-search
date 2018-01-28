@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 export class RepocolorService {
 
   getColor(language) {
+    // get the color associated with a language, if color available
     if (this.colors[language] && this.colors[language].color) {
       return this.colors[language].color;
     } else {
