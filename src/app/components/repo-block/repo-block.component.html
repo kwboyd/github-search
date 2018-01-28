@@ -1,4 +1,4 @@
-<div class="repo-container">
+<div class="repo-container" [@enterAnimation]>
 
   <div class="avatar-column">
     <img class="avatar" [src]="repo.owner.avatar_url" alt="repo.owner.login">
@@ -12,7 +12,7 @@
         <p>{{ repo.description }}</p>
       </div>
       <div class="star-box">
-        {{ repo.stargazers_count | toLocale }}
+        <p>{{ repo.stargazers_count | toLocale }}</p>
         <img src="./assets/icons/star.svg" alt="Stars">
       </div>
     </div>
