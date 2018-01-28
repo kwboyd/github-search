@@ -13,6 +13,7 @@ export class AppComponent {
   resultsLoaded: boolean = false;
   sortBy: string = 'score';
   query: string;
+  loading: boolean = false;
 
   constructor(public queryService: QueryService) {}
 
@@ -31,12 +32,14 @@ export class AppComponent {
   }
 
   search() {
+    this.loading = true;
     this.queryService.search(this.query, this.sortBy)
       .subscribe(res => {
         console.log(res);
         this.repoCount = res["total_count"];
         this.repos = res["items"];
         this.resultsLoaded = true;
+        this.loading = false;
       });
   }
 }

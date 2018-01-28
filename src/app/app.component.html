@@ -3,7 +3,7 @@
     <h1><span id="github-logo"><img alt="GitHub Search" src="./assets/icons/github_mark.svg"></span> GitHub Search</h1>
   </div>
 
-  <searchbar (enter)="setQuery($event)"></searchbar>
+  <searchbar (enter)="setQuery($event)" [loading]="loading"></searchbar>
 
   <div class="flex-row-between" *ngIf="resultsLoaded" >
     <p class="large-text">
@@ -15,7 +15,5 @@
     <sortmenu [sortBy]="sortBy" (switch)="setSortBy($event)"></sortmenu>
   </div>
 
-
-
-  <p *ngFor="let repo of repos">{{ repo.full_name }}</p>
+  <repoblock *ngFor="let repo of repos" [repo]="repo"></repoblock>
 </div>

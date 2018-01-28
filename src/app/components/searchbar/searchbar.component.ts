@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { QueryService } from '../../services/query/query.service';
 
 @Component({
@@ -8,6 +8,8 @@ import { QueryService } from '../../services/query/query.service';
 })
 export class SearchbarComponent {
   query: string;
+
+  @Input() loading: boolean;
 
   @Output() enter: EventEmitter<string> = new EventEmitter<string>();
 

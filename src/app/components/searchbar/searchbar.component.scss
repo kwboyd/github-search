@@ -1,5 +1,15 @@
 @import "~variables.scss";
 
+form {
+  display: inline-block;
+  width: calc(100% - 4em);
+}
+
+.spinner {
+  width: 3em;
+  float: right;
+}
+
 .search-input {
   width: calc(100% - 50px);
   height: 50px;
