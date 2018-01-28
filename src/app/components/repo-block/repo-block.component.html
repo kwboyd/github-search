@@ -1,15 +1,15 @@
 <div class="repo-container" [@enterAnimation]>
 
-  <div class="avatar-column">
-    <img class="avatar" [src]="repo.owner.avatar_url" alt="repo.owner.login">
+  <a class="avatar-column" [href]="repo.owner.html_url" target="_blank">
+    <img class="avatar" [src]="repo.owner.avatar_url" [alt]="repo.owner.login">
     <p class="username">{{ repo.owner.login }}</p>
-  </div>
+  </a>
 
-  <div class="repo-info-column">
+  <a class="repo-info-column" [href]="repo.html_url" target="_blank">
     <div class="flex-row-between">
       <div class="repo-name-column">
-        <a>{{ repo.full_name }}</a>
-        <p>{{ repo.description }}</p>
+        <p class="repo-name">{{ repo.full_name }}</p>
+        <p class="repo-description">{{ repo.description }}</p>
       </div>
       <div class="star-box">
         <p>{{ repo.stargazers_count | toLocale }}</p>
@@ -20,10 +20,10 @@
     <div class="flex-row-between">
       <p class="repo-language">{{ repo.language }}</p>
       <div class="repo-dates-row">
-        <p>Updated: </p>
-        <p>Created: </p>
+        <p>Updated: {{repo.updated_at | date:'mediumDate' }}</p>
+        <p>Created: {{repo.created_at | date:'mediumDate' }}</p>
       </div>
     </div>
-  </div>
+  </a>
 
 </div>

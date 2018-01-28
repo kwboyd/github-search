@@ -7,7 +7,7 @@
 
 .sort-value {
   text-transform: capitalize;
-  font-weight: 700;
+  font-weight: $bold;
   position: relative;
   &:after {
     content: url('/assets/icons/triangle_down.svg');

@@ -11,8 +11,9 @@ import { RepoBlockComponent } from './components/repo-block/repo-block.component
 
 import { QueryService } from './services/query/query.service';
 import { RepoColorService } from './services/repo-color/repo-color.service';
-import { ToLocalePipe } from './pipes/to-locale/to-locale.pipe';
 
+import { ToLocalePipe } from './pipes/to-locale/to-locale.pipe';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [

@@ -4,12 +4,14 @@
   width: 100%;
   display: flex;
   flex-direction: row;
+  margin: 1.5em 0;
 }
 
 .avatar-column {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 4.5em;
 }
 
 .avatar {
@@ -21,27 +23,47 @@
   margin-top: .5em;
   font-size: .9em;
   color: $light-gray;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.repo-name {
+  font-weight: $bold;
+  color: $blue;
+  font-size: 1.2em;
 }
 
 .repo-info-column {
-  padding-left: 1em;
+  padding-left: 1.5em;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 100%;
+}
+
+.repo-description {
+  color: $dark-gray;
+  font-size: .9em;
+  margin: .5em 0;
 }
 
 .repo-name-column {
   display: flex;
   flex-direction: column;
+  max-width: 80%;
 }
 
 .star-box {
   img {
-    width: 16px;
-    height: auto;
+    height: .95em;
+    float: right;
+    margin-top: 1px;
+    margin-left: .2em;
   }
   p {
     display: inline;
+    color: $dark-gray;
+    font-size: .9em;
   }
 }
 

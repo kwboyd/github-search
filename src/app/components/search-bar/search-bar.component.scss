@@ -29,7 +29,7 @@ form {
   }
 }
 
-.search-input:focus, #search-input:focus + #search-button {
+.search-input:focus, .search-input:focus + .search-button {
   outline: 0;
   border-color: $blue;
 }

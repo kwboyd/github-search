@@ -14,6 +14,7 @@ export class AppComponent {
   sortBy: string = 'score';
   query: string;
   loading: boolean = false;
+  error: boolean = false;
 
   constructor(public queryService: QueryService) {}
 
@@ -33,6 +34,7 @@ export class AppComponent {
 
   search() {
     this.loading = true;
+    this.error = false;
     this.queryService.search(this.query, this.sortBy)
       .subscribe(res => {
         console.log(res);
@@ -40,6 +42,9 @@ export class AppComponent {
         this.repos = res["items"];
         this.resultsLoaded = true;
         this.loading = false;
+      }, error => {
+        this.loading = false;
+        this.error = true;
       });
   }
 }

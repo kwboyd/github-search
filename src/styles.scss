@@ -10,7 +10,12 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: $default-font;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
 }
 
 .large-text {
@@ -19,7 +24,7 @@ body {
 }
 
 .bold {
-  font-weight: 700;
+  font-weight: $bold;
 }
 
 .relative {
@@ -36,6 +41,6 @@ body {
 
 h1 {
   font-size: 2em;
-  font-weight: 700;
+  font-weight: $bold;
   color: #000;
 }
