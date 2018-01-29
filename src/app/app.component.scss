@@ -34,6 +34,7 @@
   border-radius: 3px;
   font-weight: 700;
   cursor: pointer;
+  border: 1px $medium-gray outset;
   &:hover, &:focus {
     background-color: $dark-blue;
     outline: none;

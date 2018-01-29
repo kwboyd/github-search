@@ -25,8 +25,8 @@
   </a>
 
   <div class="button-row">
-    <button *ngIf="prevPage" (click)="switchPage('prev')" class="page-button prev">Previous</button>
-    <button *ngIf="nextPage" (click)="switchPage('next')" class="page-button next">Next</button>
+    <button *ngIf="pages.prev" (click)="switchPage('prev')" class="page-button prev">Previous</button>
+    <button *ngIf="pages.next" (click)="switchPage('next')" class="page-button next">Next</button>
   </div>
 
 </div>

@@ -16,9 +16,7 @@ export class AppComponent {
   query: string;
   loading: boolean = false;
   error: boolean = false;
-  page: number;
-  nextPage: string;
-  prevPage: string;
+  pages: {next: string, prev: string} = {next: null, prev: null};
 
   constructor(
     public queryService: QueryService,
@@ -59,8 +57,8 @@ export class AppComponent {
 
     // parse response body data
     let body = res.body;
-    this.nextPage = parsedLink["next"];
-    this.prevPage = parsedLink["prev"];
+    this.pages.next = parsedLink["next"];
+    this.pages.prev = parsedLink["prev"];
     this.repoCount = body["total_count"];
     this.repos = body["items"];
     this.resultsLoaded = true;
@@ -70,8 +68,7 @@ export class AppComponent {
   handleError() {
     // reset all data and set error
     window.scrollTo({ left: 0, top: 0, behavior: 'smooth' });
-    this.nextPage = null;
-    this.prevPage = null;
+    this.pages = {next: null, prev: null};
     this.repoCount = 0;
     this.repos = [];
     this.loading = false;
@@ -80,14 +77,13 @@ export class AppComponent {
 
   switchPage(direction: string) {
     // go to the next or previous page
+    // direction should be 'next' or 'prev'
+    if (!this.pages[direction]) {
+      throw new Error("Page does not exist");
+    }
     this.loading = true;
     var page;
-    if (direction === 'next') {
-      page = this.nextPage;
-    } else if (direction === 'prev') {
-      page = this.prevPage;
-    }
-    this.queryService.changePage(page)
+    this.queryService.changePage(this.pages[direction])
       .subscribe(res => {
         this.parseResults(res);
       }, error => {
