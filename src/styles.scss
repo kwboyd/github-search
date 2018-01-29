@@ -49,6 +49,10 @@ h1 {
   display: inherit;
 }
 
+.mobile-only {
+  display: none;
+}
+
 @media(max-width: 600px) {
   body {
     font-size: 12px;
@@ -56,6 +60,10 @@ h1 {
 
   .desktop-only {
     display: none;
+  }
+
+  .mobile-only {
+    display: inherit;
   }
 }
 

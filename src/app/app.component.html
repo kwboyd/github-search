@@ -14,5 +14,14 @@
     <sort-menu [sortBy]="sortBy" (switch)="setSortBy($event)"></sort-menu>
   </div>
 
-  <repo-block *ngFor="let repo of repos" [repo]="repo"></repo-block>
+  <!-- desktop only repos -->
+  <!-- on desktop, we went only the title and avatar to be links -->
+  <repo-block class="desktop-only" *ngFor="let repo of repos" [repo]="repo"></repo-block>
+
+  <!-- mobile only repos -->
+  <!-- on mobile, we want the entire repo to be a link -->
+  <a *ngFor="let repo of repos" class="mobile-only" [href]="repo.html_url">
+    <repo-block [repo]="repo"></repo-block>
+  </a>
+
 </div>

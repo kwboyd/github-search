@@ -43,6 +43,8 @@ export class AppComponent {
         this.resultsLoaded = true;
         this.loading = false;
       }, error => {
+        this.repoCount = 0;
+        this.repos = [];
         this.loading = false;
         this.error = true;
       });
