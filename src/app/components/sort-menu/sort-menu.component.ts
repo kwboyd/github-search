@@ -15,10 +15,11 @@ export class SortMenuComponent {
   constructor() { }
 
   toggleSortBox() {
-    this.showSortBox = true;
+    this.showSortBox = !this.showSortBox;
   }
 
   switchSort(sortType: string) {
+    // emit the sortType and close the box
     this.switch.emit(sortType);
     this.showSortBox = false;
   }
