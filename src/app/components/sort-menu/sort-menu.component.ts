@@ -1,7 +1,7 @@
 import { Component, Input, HostListener, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'sort-menu',
+  selector: 'app-sort-menu',
   templateUrl: './sort-menu.component.html',
   styleUrls: ['./sort-menu.component.scss']
 })
@@ -22,13 +22,13 @@ export class SortMenuComponent {
     this.switch.emit(sortType);
     this.showSortBox = false;
   }
-  
+
   @HostListener('click')
   clickInside() {
     // if the user clicks within the sort menu, set clickedWithin to true so that clickOutside() doesn't hide the menu
     this.clickedWithin = true;
   }
-  
+
   @HostListener('document:click')
   clickOutside() {
     // if the user clicks anywhere outside the sort menu, hide the menu

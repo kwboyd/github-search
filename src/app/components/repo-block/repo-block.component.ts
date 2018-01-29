@@ -1,9 +1,10 @@
-import { Component, Input, trigger, transition, animate, style } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Repo } from '../../interfaces/repo';
 import { RepoColorService } from '../../services/repo-color/repo-color.service';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
-  selector: 'repo-block',
+  selector: 'app-repo-block',
   templateUrl: './repo-block.component.html',
   styleUrls: ['./repo-block.component.scss'],
   animations: [
@@ -23,7 +24,7 @@ export class RepoBlockComponent {
   constructor(public repoColorService: RepoColorService) { }
 
   getColor(language) {
-    let color = this.repoColorService.getColor(language);
+    const color = this.repoColorService.getColor(language);
     if (!language) {
       // if no language, don't want a background
       return 'transparent';

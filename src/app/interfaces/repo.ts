@@ -8,7 +8,7 @@ export interface Repo {
     avatar_url: string;
     gravatar_id: string;
     html_url: string;
-  },
+  };
   private: boolean;
   html_url: string;
   description: string;

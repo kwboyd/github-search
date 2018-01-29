@@ -52,15 +52,15 @@ export class AppComponent {
   parseResults(res) {
     window.scrollTo({ left: 0, top: 0, behavior: 'smooth' });
     // get the links from the headers and parse them
-    let headerLink = res.headers.get('Link');
-    let parsedLink = this.headerService.parseLinkHeader(headerLink);
+    const headerLink = res.headers.get('Link');
+    const parsedLink = this.headerService.parseLinkHeader(headerLink);
 
     // parse response body data
-    let body = res.body;
-    this.pages.next = parsedLink["next"];
-    this.pages.prev = parsedLink["prev"];
-    this.repoCount = body["total_count"];
-    this.repos = body["items"];
+    const body = res.body;
+    this.pages.next = parsedLink['next'];
+    this.pages.prev = parsedLink['prev'];
+    this.repoCount = body['total_count'];
+    this.repos = body['items'];
     this.resultsLoaded = true;
     this.loading = false;
   }
@@ -79,10 +79,9 @@ export class AppComponent {
     // go to the next or previous page
     // direction should be 'next' or 'prev'
     if (!this.pages[direction]) {
-      throw new Error("Page does not exist");
+      throw new Error('Page does not exist');
     }
     this.loading = true;
-    var page;
     this.queryService.changePage(this.pages[direction])
       .subscribe(res => {
         this.parseResults(res);

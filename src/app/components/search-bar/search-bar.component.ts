@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { QueryService } from '../../services/query/query.service';
 
 @Component({
-  selector: 'search-bar',
+  selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.scss']
 })

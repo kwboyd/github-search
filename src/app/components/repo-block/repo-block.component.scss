@@ -10,6 +10,9 @@
   min-height: 10em;
 }
 
+/* avatar styles */
+/* avatar does not show on mobile */
+
 .avatar-column {
   display: flex;
   flex-direction: column;
@@ -34,6 +37,8 @@
   max-width: 100%;
   word-wrap: break-word;
 }
+
+/* repo info styles */
 
 .repo-name {
   font-weight: $bold;
@@ -112,10 +117,6 @@
 
   .repo-dates-box {
     flex-direction: column;
-  }
-
-  .avatar {
-    width: 3.5em;
   }
 
   .repo-name {
