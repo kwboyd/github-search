@@ -9,13 +9,10 @@ import { QueryService } from './services/query/query.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HeaderService } from './services/header/header.service';
+import { By } from '@angular/platform-browser';
 
-const MockQueryService = {
-}
-
-const MockHeaderService = {
-
-}
+let fixture;
+let app;
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -33,15 +30,29 @@ describe('AppComponent', () => {
         HttpClientTestingModule
       ],
       providers: [
-        {provide: QueryService, useValue: MockQueryService},
-        {provide: HeaderService, useValue: MockHeaderService}
+        QueryService, HeaderService
       ]
     }).compileComponents();
   }));
 
   it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+    fixture = TestBed.createComponent(AppComponent);
+    app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
+
+  describe('function setQuery', ()=>{
+    it('should not change the app query if called with no query', ()=>{
+      let oldQuery = app.query;
+      app.setQuery('');
+      expect(app.query).toEqual(oldQuery);
+    })
+
+    it('should change the app query if called with a query', ()=>{
+      let oldQuery = app.query;
+      app.setQuery('new query');
+      expect(app.query).toEqual('new query');
+    })
+  });
+
 });

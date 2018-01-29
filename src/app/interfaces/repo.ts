@@ -6,7 +6,6 @@ export interface Repo {
     login: string;
     id: number;
     avatar_url: string;
-    gravatar_id: string;
     html_url: string;
   };
   private: boolean;
@@ -17,7 +16,5 @@ export interface Repo {
   updated_at: string;
   stargazers_count: number;
   language: string;
-  master_branch: string;
-  default_branch: string;
   score: number;
 }
