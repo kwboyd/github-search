@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Output, Input } from '@angular/core';
-import { QueryService } from '../../services/query/query.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -13,9 +12,7 @@ export class SearchBarComponent {
 
   @Output() enter: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(
-    public queryService: QueryService
-  ) { }
+  constructor() { }
 
   enterSearch() {
     // triggered by pressing the search button or pressing enter
