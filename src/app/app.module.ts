@@ -11,6 +11,7 @@ import { RepoBlockComponent } from './components/repo-block/repo-block.component
 
 import { QueryService } from './services/query/query.service';
 import { RepoColorService } from './services/repo-color/repo-color.service';
+import { HeaderService } from './services/header/header.service';
 
 import { ToLocalePipe } from './pipes/to-locale/to-locale.pipe';
 import { DatePipe } from '@angular/common';
@@ -31,7 +32,8 @@ import { DatePipe } from '@angular/common';
   ],
   providers: [
     QueryService,
-    RepoColorService
+    RepoColorService,
+    HeaderService
   ],
   bootstrap: [AppComponent]
 })

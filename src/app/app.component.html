@@ -24,4 +24,9 @@
     <repo-block [repo]="repo"></repo-block>
   </a>
 
+  <div class="button-row">
+    <button *ngIf="prevPage" (click)="switchPage('prev')" class="page-button prev">Previous</button>
+    <button *ngIf="nextPage" (click)="switchPage('next')" class="page-button next">Next</button>
+  </div>
+
 </div>
