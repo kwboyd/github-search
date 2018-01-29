@@ -44,5 +44,14 @@
       width: 7px;
       top: -1px;
     }
+    &:hover, &:focus {
+      color: $dark-gray;
+    }
+  }
+}
+
+@media(max-width: 600px) {
+  .sort-box {
+    width: 6.5em;
   }
 }

@@ -3,7 +3,7 @@
 form {
   width: calc(100% - 4em);
   display: inline-flex;
-  height: 3.5em;
+  height: 3em;
   flex-direction: row;
 }
 
@@ -13,7 +13,7 @@ form {
 }
 
 .search-input {
-  width: calc(100% - 3em);
+  width: calc(100% - 3.5em);
   height: 100%;
   padding-left: 9px;
   font-size: 1.1em;
@@ -38,17 +38,28 @@ form {
 
 .search-button {
   cursor: pointer;
-  width: 3.5em;
+  width: 4.5em;
   height: 100%;
   border-radius: 0px 6px 6px 0px;
   border: 1px solid #7d7d7d;
   background-color: #368cc6;
-  padding: 4px;
   img {
-    width: 70%;
+    width: 55%;
   }
   &:focus, &:hover {
     outline: none;
     background-color: $dark-blue;
+  }
+}
+
+@media(max-width: 600px) {
+  .search-button {
+    width: 3.5em;
+  }
+}
+
+@media(min-width: 1800px) {
+  .search-button {
+    width: 6em;
   }
 }

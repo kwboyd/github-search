@@ -7,7 +7,7 @@
 
   <p class="error-message" *ngIf="error">Could not load results. Please try again.</p>
 
-  <div class="flex-row-between" *ngIf="resultsLoaded && !error">
+  <div class="flex-row-between search-results-info" *ngIf="resultsLoaded && !error">
     <p class="large-text">
       <span class="bold">{{ repoCount | toLocale }}</span> {{ repoCount === 1 ? 'result' : 'results' }} found. 
     </p>

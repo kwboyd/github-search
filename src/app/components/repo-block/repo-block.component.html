@@ -5,10 +5,10 @@
     <p class="username">{{ repo.owner.login }}</p>
   </a>
 
-  <a class="repo-info-column" [href]="repo.html_url" target="_blank">
+  <div class="repo-info-column">
     <div>
       <div class="flex-row-between">
-        <p class="repo-name">{{ repo.full_name }}</p>
+        <a class="repo-name" [href]="repo.html_url" target="_blank">{{ repo.full_name }}</a>
         <div class="star-box">
           <p>{{ repo.stargazers_count | toLocale }}</p>
           <img src="./assets/icons/star.svg" alt="Stars">
@@ -24,6 +24,6 @@
         <p>Created: {{repo.created_at | date:'mediumDate' }}</p>
       </div>
     </div>
-  </a>
+  </div>
 
 </div>
