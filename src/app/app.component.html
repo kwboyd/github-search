@@ -10,9 +10,6 @@
   <div class="flex-row-between" *ngIf="resultsLoaded && !error">
     <p class="large-text">
       <span class="bold">{{ repoCount | toLocale }}</span> {{ repoCount === 1 ? 'result' : 'results' }} found. 
-      <span *ngIf="repos.length < repoCount">Showing top {{ repos.length | toLocale }}.</span>
-      <!-- total search result count often greater than the actual number of repos returned. -->
-      <!--  if so, tell the user how many are being shown -->
     </p>
     <sort-menu [sortBy]="sortBy" (switch)="setSortBy($event)"></sort-menu>
   </div>

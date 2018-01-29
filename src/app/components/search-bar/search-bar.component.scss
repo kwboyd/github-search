@@ -1,8 +1,10 @@
 @import "~variables.scss";
 
 form {
-  display: inline-block;
   width: calc(100% - 4em);
+  display: inline-flex;
+  height: 3.5em;
+  flex-direction: row;
 }
 
 .spinner {
@@ -11,8 +13,8 @@ form {
 }
 
 .search-input {
-  width: calc(100% - 50px);
-  height: 50px;
+  width: calc(100% - 3em);
+  height: 100%;
   padding-left: 9px;
   font-size: 1.1em;
   background-color: #fff;
@@ -35,13 +37,12 @@ form {
 }
 
 .search-button {
-  float: right;
   cursor: pointer;
-  width: 50px;
-  height: 50px;
+  width: 3.5em;
+  height: 100%;
   border-radius: 0px 6px 6px 0px;
-  border: 1px solid $medium-gray;
-  background-color: $blue;
+  border: 1px solid #7d7d7d;
+  background-color: #368cc6;
   padding: 4px;
   img {
     width: 70%;

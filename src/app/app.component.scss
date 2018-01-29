@@ -15,10 +15,18 @@
 }
 
 .title {
-  margin-bottom: 1.1em;
+  margin-bottom: 1.3em;
 }
 
 .error-message {
   color: $dark-gray;
   margin-top: 1.5em;
+}
+
+@media(max-width: 600px) {
+  .app-container {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 40px;
+  }
 }

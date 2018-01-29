@@ -4,7 +4,10 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  margin: 1.5em 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2em;
+  margin: 2em 0 1em;
+  min-height: 10em;
 }
 
 .avatar-column {
@@ -31,33 +34,49 @@
   font-weight: $bold;
   color: $blue;
   font-size: 1.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .repo-info-column {
-  padding-left: 1.5em;
+  margin-left: 1.75em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  width: calc(100% - 6em);
 }
 
 .repo-description {
   color: $dark-gray;
   font-size: .9em;
-  margin: .5em 0;
+  margin: .75em 0;
+}
+
+.repo-language {
+  border-radius: 1em;
+  padding: .3em .8em;
+  font-weight: $bold;
+  font-size: .8em;
+  color: white;
 }
 
 .repo-name-column {
   display: flex;
   flex-direction: column;
-  max-width: 80%;
+  max-width: calc(100% - 3.5em);
+}
+
+.repo-data-row {
+  margin-top: .5em;
 }
 
 .star-box {
   img {
     height: .95em;
     float: right;
-    margin-top: 1px;
+    margin-top: .05em;
     margin-left: .2em;
   }
   p {
@@ -67,10 +86,39 @@
   }
 }
 
-.repo-dates-row {
+.repo-dates-box {
   display: flex;
   flex-direction: row;
   p {
+    font-size: .85em;
+    margin-left: 1em;
     color: $light-gray;
+  }
+}
+
+@media(max-width: 600px) {
+  .avatar-column {
+    display: none;
+  }
+
+  .repo-dates-box {
+    flex-direction: column;
+  }
+
+  .avatar {
+    width: 3.5em;
+  }
+
+  .repo-name {
+    font-size: 1em;
+  }
+
+  .repo-data-row {
+    align-items: flex-end;
+  }
+
+  .repo-info-column {
+    margin-left: 0;
+    width: 100%;
   }
 }

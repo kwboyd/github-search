@@ -1,25 +1,25 @@
 <div class="repo-container" [@enterAnimation]>
 
-  <a class="avatar-column" [href]="repo.owner.html_url" target="_blank">
+  <a class="avatar-column desktop-only" [href]="repo.owner.html_url" target="_blank">
     <img class="avatar" [src]="repo.owner.avatar_url" [alt]="repo.owner.login">
     <p class="username">{{ repo.owner.login }}</p>
   </a>
 
   <a class="repo-info-column" [href]="repo.html_url" target="_blank">
-    <div class="flex-row-between">
-      <div class="repo-name-column">
+    <div>
+      <div class="flex-row-between">
         <p class="repo-name">{{ repo.full_name }}</p>
-        <p class="repo-description">{{ repo.description }}</p>
+        <div class="star-box">
+          <p>{{ repo.stargazers_count | toLocale }}</p>
+          <img src="./assets/icons/star.svg" alt="Stars">
+        </div>
       </div>
-      <div class="star-box">
-        <p>{{ repo.stargazers_count | toLocale }}</p>
-        <img src="./assets/icons/star.svg" alt="Stars">
-      </div>
+      <p class="repo-description">{{ repo.description }}</p>
     </div>
 
-    <div class="flex-row-between">
-      <p class="repo-language">{{ repo.language }}</p>
-      <div class="repo-dates-row">
+    <div class="flex-row-between repo-data-row">
+      <p class="repo-language" [style.background-color]="getColor(repo.language)">{{ repo.language }}</p>
+      <div class="repo-dates-box">
         <p>Updated: {{repo.updated_at | date:'mediumDate' }}</p>
         <p>Created: {{repo.created_at | date:'mediumDate' }}</p>
       </div>

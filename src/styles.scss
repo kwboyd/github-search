@@ -44,3 +44,23 @@ h1 {
   font-weight: $bold;
   color: #000;
 }
+
+.desktop-only {
+  display: inherit;
+}
+
+@media(max-width: 600px) {
+  body {
+    font-size: 12px;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+}
+
+@media(min-width: 1800px) {
+  body {
+    font-size: 20px;
+  }
+}
