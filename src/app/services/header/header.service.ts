@@ -6,13 +6,14 @@ export class HeaderService {
   parseLinkHeader(header) {
     // parses a link list from header and returns an object that includes the 'next' and 'prev' links
     // code adapted from https://gist.github.com/niallo/3109252
-    if (header.length === 0) {
-      throw new Error('Input must not be of zero length');
+    if (!header || header.length === 0) {
+      // if there is no header (no next or previous pages) return null
+      return null;
     }
-    // Split parts by comma
+    // split parts by comma
     const parts = header.split(',');
     const links = {};
-    // Parse each part into a named link
+    // parse each part into a named link
     for (let i = 0; i < parts.length; i++) {
       const section = parts[i].split(';');
       if (section.length !== 2) {

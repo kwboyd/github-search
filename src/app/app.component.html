@@ -11,12 +11,12 @@
     <p class="large-text">
       <span class="bold">{{ repoCount | toLocale }}</span> {{ repoCount === 1 ? 'result' : 'results' }} found. 
     </p>
-    <app-sort-menu [sortBy]="sortBy" (switch)="setSortBy($event)"></app-sort-menu>
+    <app-sort-menu *ngIf="repos.length > 0" [sortBy]="sortBy" (switch)="setSortBy($event)"></app-sort-menu>
   </div>
 
   <!-- desktop only repos -->
   <!-- on desktop, we went only the title and avatar to be links -->
-  <app-repo-block class="desktop-only" *ngFor="let repo of repos" [repo]="repo"></app-repo-block>
+  <app-repo-block *ngFor="let repo of repos" class="desktop-only" [repo]="repo"></app-repo-block>
 
   <!-- mobile only repos -->
   <!-- on mobile, we want the entire repo to be a link -->
