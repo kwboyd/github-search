@@ -20,7 +20,7 @@
 
   <!-- mobile only repos -->
   <!-- on mobile, we want the entire repo to be a link -->
-  <a *ngFor="let repo of repos" class="mobile-only" [href]="repo.html_url">
+  <a *ngFor="let repo of repos" class="mobile-only" [href]="repo.html_url" target="_blank">
     <app-repo-block [repo]="repo"></app-repo-block>
   </a>
 

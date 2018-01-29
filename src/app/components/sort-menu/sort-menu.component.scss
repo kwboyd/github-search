@@ -52,6 +52,11 @@
 
 @media(max-width: 600px) {
   .sort-box {
-    width: 6.5em;
+    width: 9em;
+    p {
+      padding-left: 1em;
+      line-height: 1.9;
+      font-size: 1.1em;
+    }
   }
 }
